@@ -18,8 +18,21 @@ export default function Login() {
     if (foundUser) {
       localStorage.setItem("isLoggedIn", "true");
       localStorage.setItem("currentUser", JSON.stringify(foundUser));
-      navigate("/dashboard");
-    } else {
+
+      if (foundUser.role === "admin") {
+        navigate("/admin-dashboard");
+      } 
+      else if (foundUser.role === "operation") {
+        navigate("/operation-dashboard");
+      } 
+      else if (foundUser.role === "support") {
+        navigate("/support-dashboard");
+      } 
+      else {
+        navigate("/dashboard");
+      }
+    } 
+    else {
       setError("Invalid username or password.");
     }
   };
