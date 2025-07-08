@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Signup() {
+  const [role, setRole] = useState("user");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -21,7 +22,7 @@ export default function Signup() {
       return;
     }
 
-    users.push({ username, password, email });
+    users.push({ username, password, email, role});
 
     localStorage.setItem("users", JSON.stringify(users));
 
@@ -59,6 +60,16 @@ export default function Signup() {
             onChange={e => setEmail(e.target.value)}
             required
           />
+          <select
+            className="w-full border border-black px-3 py-2"
+            value={role}
+            onChange={e => setRole(e.target.value)}>
+              <option value="user">User</option>
+              <option value="operation">Operation Team</option>
+              <option value="support">Technical Support</option>
+              <option value="admin">Admin</option>
+        </select>
+
           <div className="flex justify-center mt-4">
             <button type="submit" className="bg-[#2e6eea] text-white px-10 py-2 rounded-lg">
               Sign Up
