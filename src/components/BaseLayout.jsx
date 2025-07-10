@@ -13,6 +13,39 @@ export default function BaseLayout({ children }) {
         navigate("/login");
     }
 
+    // Get current user and role
+  const currentUser = JSON.parse(localStorage.getItem("currentUser") || "{}");
+  const role = currentUser.role || "user";
+
+  // Sidebar links for each role
+  const sidebarLinks = {
+    user: [
+      { to: "/dashboard", label: "Dashboard", icon: "fas fa-th-large" },
+      { to: "/new-ticket", label: "New Ticket", icon: "fas fa-ticket-alt" },
+      { to: "/my-ticket", label: "My Ticket", icon: "fas fa-inbox" },
+    ],
+    operation: [
+      { to: "/operation-dashboard", label: "Dashboard", icon: "fas fa-th-large" },
+      { to: "/ticket-approval", label: "Ticket Approval", icon: "fas fa-check-circle" },
+      { to: "/my-ticket", label: "My Ticket", icon: "fas fa-inbox" },
+      { to: "/performance", label: "Performance", icon: "fas fa-chart-line" },
+    ],
+    support: [
+      { to: "/support-dashboard", label: "Dashboard", icon: "fas fa-th-large" },
+      { to: "/my-ticket", label: "My Ticket", icon: "fas fa-inbox" },
+      { to: "/performance", label: "Performance", icon: "fas fa-chart-line" },
+    ],
+    admin: [
+      { to: "/admin-dashboard", label: "Dashboard", icon: "fas fa-th-large" },
+      { to: "/database", label: "Database", icon: "fas fa-database" },
+      { to: "/settings", label: "Settings", icon: "fas fa-cogs" },
+      { to: "/user-log-history", label: "User Log History", icon: "fas fa-history" },
+    ],
+  };
+
+  // Fallback in case of unknown role
+  const links = sidebarLinks[role] || sidebarLinks["user"];
+
   return (
     <div className="min-h-screen flex flex-col font-serif bg-gray-50">
       {/* Header */}
@@ -41,48 +74,27 @@ export default function BaseLayout({ children }) {
       <div className="flex flex-1 w-full">
         {/* Sidebar */}
         <aside className="bg-gray-200 w-64 flex flex-col space-y-3 py-4 px-3 select-none border-r border-gray-300">
-          <NavLink to="/dashboard"
-            className={({ isActive }) =>
-              "flex items-center space-x-2 text-black font-semibold rounded px-2 py-1 " +
-              (isActive ? "bg-white" : "hover:bg-white")
-            }
-          >
-            {({ isActive }) => (
-                <>
-                    {isActive && <i class="fas fa-angle-right"></i>}
-                    <i className="fas fa-th-large"></i>
-                    <span>Dashboard</span>
-                </>
-            )}
-          </NavLink>
-          <NavLink to="/new-ticket"
-            className={({ isActive }) =>
-              "flex items-center space-x-2 text-black font-semibold rounded px-2 py-1 " +
-              (isActive ? "bg-white" : "hover:bg-white")
-            }
-          >
-            {({ isActive }) => (
-                <>
-                    {isActive && <i className="fas fa-angle-right"></i>}
-                    <i className="fas fa-ticket-alt"></i>
-                    <span>New Ticket</span>
-                </>
-            )}
-          </NavLink>
-          <NavLink to="/my-ticket"
-            className={({ isActive }) =>
-              "flex items-center space-x-2 text-black font-semibold rounded px-2 py-1 " +
-              (isActive ? "bg-white" : "hover:bg-white")
-            }
-          >
-            {({ isActive }) => (
-                <>
-                    {isActive && <i className="fas fa-angle-right"></i>}
-                    <i className="fas fa-inbox"></i>
-                    <span>My Ticket</span>
-                </>
-            )}
-          </NavLink>
+          <ul>
+            {links.map(({ to, label, icon }) => (
+              <li key={to} className="sidebar-item">
+                <NavLink
+                  to={to}
+                  className={({ isActive }) =>
+                    "flex items-center space-x-2 text-black font-semibold rounded px-2 py-1 " +
+                    (isActive ? "bg-white" : "hover:bg-white")
+                  }
+                >
+                  {({ isActive }) => (
+                    <>
+                      {isActive && <i className="fas fa-angle-right"></i>}
+                      <i className={icon}></i>
+                      <span>{label}</span>
+                    </>
+                  )}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
         </aside>
 
         {/* Content + Footer Wrapper */}

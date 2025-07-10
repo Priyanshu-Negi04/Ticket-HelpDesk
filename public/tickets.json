@@ -14,7 +14,8 @@
     "attachment": "screenshot1.png",
     "name": "John Doe",
     "dept": "IT",
-    "title": "Login not working"
+    "title": "Login not working",
+    "personInCharge": "Sandeep Kumar"
   },
   {
     "ticketNo": "1124",
@@ -31,7 +32,8 @@
     "attachment": "",
     "name": "Jane Smith",
     "dept": "Operations",
-    "title": "Ticket creation error"
+    "title": "Ticket creation error",
+    "personInCharge": "Amit Verma"
   },
   {
     "ticketNo": "1224",
@@ -48,7 +50,8 @@
     "attachment": "form.pdf",
     "name": "Alex Lee",
     "dept": "Admin",
-    "title": "Install new software"
+    "title": "Install new software",
+    "personInCharge": "Nikita Sharma"
   },
   {
     "ticketNo": "1244",
@@ -65,7 +68,8 @@
     "attachment": "",
     "name": "Priya Patel",
     "dept": "Support",
-    "title": "Printer maintenance"
+    "title": "Printer maintenance",
+    "personInCharge": "Manoj Gupta"
   },
   {
     "ticketNo": "1114",
@@ -82,6 +86,7 @@
     "attachment": "error_log.txt",
     "name": "Meera Singh",
     "dept": "HR",
-    "title": "Login failures"
+    "title": "Login failures",
+    "personInCharge": "Sandeep Kumar"
   }
 ]
