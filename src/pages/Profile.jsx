@@ -10,7 +10,7 @@ export default function Profile() {
 
   return (
     <BaseLayout>
-        <main className="flex-1 p-6 bg-white min-w-0">
+        <main className="flex-1 p-6 bg-white min-w-0" style={{zoom : 1.25}}>
         <h2 className="text-xl mb-4 font-normal">User Profile</h2>
         <section className="bg-[#8de0db] p-6 flex flex-wrap gap-4 rounded-sm w-full max-w-full justify-center">
             {/* Profile Card */}

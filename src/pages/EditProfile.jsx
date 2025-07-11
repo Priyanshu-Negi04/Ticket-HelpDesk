@@ -56,7 +56,7 @@ export default function EditProfile() {
 
   return (
     <BaseLayout>
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-6" style={{zoom : 1.25}}>
         <h2 className="text-2xl font-serif mb-4 select-text">User Profile</h2>
         <form onSubmit={handleUpdate}>
             <button

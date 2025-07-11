@@ -20,16 +20,16 @@ export default function Login() {
       localStorage.setItem("currentUser", JSON.stringify(foundUser));
 
       if (foundUser.role === "admin") {
-        navigate("/admin-dashboard");
+        navigate("/admin/dashboard");
       } 
       else if (foundUser.role === "operation") {
-        navigate("/operation-dashboard");
+        navigate("/operation/dashboard");
       } 
       else if (foundUser.role === "support") {
-        navigate("/support-dashboard");
+        navigate("/support/dashboard");
       } 
       else {
-        navigate("/dashboard");
+        navigate("/user/dashboard");
       }
     } 
     else {
