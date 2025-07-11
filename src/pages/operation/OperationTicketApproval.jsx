@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import BaseLayout from "../../components/baseLayout";
+import BaseLayout from "../../components/BaseLayout";
 import TicketModal from "../../components/TicketModal";
 
 

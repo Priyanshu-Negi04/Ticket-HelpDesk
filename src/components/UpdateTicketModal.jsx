@@ -7,7 +7,6 @@ export default function UpdateTicketModal({ ticket, onClose, onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Pass the form data to parent
     onSubmit({ ticketNo: ticket.ticketNo, teamName, teamMember, remark });
   };
 

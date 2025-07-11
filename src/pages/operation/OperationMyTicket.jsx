@@ -1,5 +1,5 @@
 import React from 'react'
-import BaseLayout from "../../components/baseLayout";
+import BaseLayout from "../../components/BaseLayout";
 import CommonMyTicket from "../../components/CommonMyTicket"
 
 export default function OperationMyTicket() {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BaseLayout from "../../components/baseLayout";
+import BaseLayout from "../../components/BaseLayout";
 
 const tabs = ["User", "Operation Team", "Technical Support"];
 
@@ -118,7 +118,7 @@ export default function AdminDatabase() {
                     </table>
                 </div>
 
-                {/* Footer */}
+                {/* Pagination */}
                 <div className="mt-4 flex justify-between text-sm">
                     <div>
                         Showing 1 to {Math.min(filteredData.length, entries)} of {filteredData.length} entries

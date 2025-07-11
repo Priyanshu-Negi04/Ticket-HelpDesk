@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import BaseLayout from "../../components/baseLayout";
+import BaseLayout from "../../components/BaseLayout";
 
 const DUMMY_LOGS = [
     {

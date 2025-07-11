@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TicketModal from "../../components/TicketModal";
-import BaseLayout from "../../components/baseLayout";
+import BaseLayout from "../../components/BaseLayout";
 
 export default function UserMyTicket() {
     const [tickets, setTickets] = useState([]);

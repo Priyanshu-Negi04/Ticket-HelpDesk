@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BaseLayout from "../../components/baseLayout";
+import BaseLayout from "../../components/BaseLayout";
 
 const initialSettings = {
   language: "BM",

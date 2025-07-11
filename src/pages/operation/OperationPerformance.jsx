@@ -1,6 +1,6 @@
 import React from 'react'
 import Performance from '../../components/Performance'
-import BaseLayout from "../../components/baseLayout";
+import BaseLayout from "../../components/BaseLayout";
 
 export default function OperationPerformance() {
 

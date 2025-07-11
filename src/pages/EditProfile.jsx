@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import BaseLayout from "../components/baseLayout";
+import BaseLayout from "../components/BaseLayout";
 
 export default function EditProfile() {
   const navigate = useNavigate();

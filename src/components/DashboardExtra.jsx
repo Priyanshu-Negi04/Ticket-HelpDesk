@@ -1,4 +1,3 @@
-// pages/RoleDashboardExtras.jsx
 import React from "react";
 
 export default function DashboardExtra() {
