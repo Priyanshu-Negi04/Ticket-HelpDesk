@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TicketModal({ ticket, onClose }) {
+export default function TicketModal({ ticket, onClose, onUpdate, showUpdate = false }) {
   if (!ticket) return null;
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm">
@@ -22,8 +22,21 @@ export default function TicketModal({ ticket, onClose }) {
           <p><span className="font-semibold">Status:</span> {ticket.status}</p>
           <p><span className="font-semibold">Attachment:</span> {ticket.attachment || "None"}</p>
         </div>
-        <div className="mt-6 flex justify-center">
-          <button className="bg-green-400 text-black rounded-md px-6 py-2 font-serif" type="button" onClick={onClose}>
+        <div className="mt-6 flex justify-center gap-8">
+          {showUpdate && (
+            <button
+              className="bg-[#B3BFFF] hover:bg-[#8da4f7] text-black rounded-md px-8 py-2 font-serif"
+              type="button"
+              onClick={onUpdate}
+            >
+              Update
+            </button>
+          )}
+          <button
+            className="bg-green-400 hover:bg-green-600 text-black rounded-md px-8 py-2 font-serif"
+            type="button"
+            onClick={onClose}
+          >
             Close
           </button>
         </div>
